@@ -1,0 +1,19 @@
+version: 0.2
+
+env:
+  variables:
+    foo: "bar"
+
+phases:
+  install:
+    commands:
+      - echo Composer install...
+      - composer install
+  build:
+    commands:
+      - echo Build started on `date`
+    finally:
+      - echo "Finally block of build phase reached.  this executes even if the commands in this phase error out."
+  post_build:
+    commands:
+      - echo Build completed on `date`
